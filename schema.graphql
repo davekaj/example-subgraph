@@ -1,6 +1,40 @@
-type Gravatar @entity {
+type User @entity {
+  id: ID!             # Ethereum address
+  balance: BigInt!    # Balance of Humanity tokens
+  applications: [TwitterApplication!]! @derivedFrom(field: "applicant")
+  votes: [Vote!]! @derivedFrom(field: "user")
+}
+
+type TwitterApplication @entity {
+  id: ID! # Proposal ID concatenated with ethereum address
+  applicant: Bytes! # Ethereum Address
+  username: String!
+}
+
+# Updated by event Vote, event Propose, event RemoveVote, event Terminate, event Execute
+type Proposal @entity {
   id: ID!
-  owner: Bytes!
-  displayName: String!
-  imageUrl: String!
+  result: String!
+  target: Bytes!
+  data: Bytes!
+  proposer: Bytes!
+  feeRecipient: Bytes!
+  fee: BigInt!
+  startTime: BigInt!
+  yesCount: BigInt!
+  noCount: BigInt!
+}
+
+# Updated by event Vote, event RemoveVote
+type Vote @entity {
+  id: ID!   # ProposalID concat with eth address
+  user: Bytes! # eth address
+  yesVotes: BigInt!
+  noVotes: BigInt!
+}
+
+enum Result {
+  Pending,
+  Yes,
+  No
 }
