@@ -29,7 +29,7 @@ export function handlePropose(event: Propose): void {
 }
 
 export function handleRemoveVote(event: RemoveVote): void {
-  
+
 
 }
 
