@@ -1,14 +1,14 @@
 {
   "name": "example",
   "version": "0.1.0",
-  "repository": "https://github.com/davekaj/example-subgraph",
+  "repository": "https://github.com/davekaj/example-subgraph/tree/dave/humanity",
   "license": "MIT",
   "scripts": {
     "create": "graph create humanity --node https://api.thegraph.com/deploy/",
     "create-local": "graph create humanity --node http://127.0.0.1:8020",
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy": "graph deploy humanity --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
+    "deploy": "graph deploy marbleprotocol/humanity --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
     "deploy-local": "graph deploy humanity --ipfs http://localhost:5001 --node http://127.0.0.1:8020"
   },
   "devDependencies": {
