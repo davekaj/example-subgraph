@@ -1,3 +1,46 @@
-# Example Subgraph
+# Humanity Subgraph
 
-An example to help you get started with The Graph. For more information see the docs on https://thegraph.com/docs/.
+See all possible queries below:
+
+```graphql
+{
+  proposals{
+    id
+    result
+    target
+    data
+    proposer
+    feeRecipient
+    fee
+    startTime
+    yesCount
+    noCount
+  }
+  votes{
+    id
+    user
+    yesVotes
+    noVotes
+  }
+  twitterApplications{
+    id
+    applicant
+    username
+  }
+  users{
+    id
+    balance
+    applications{
+      id
+      applicant
+      username
+    }
+    votes{
+      id
+      user
+      yesVotes
+      noVotes
+    }
+  }
+}
+```

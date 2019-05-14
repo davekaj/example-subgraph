@@ -22,8 +22,8 @@ dataSources:
       eventHandlers:
         - event: Transfer(address,address,uint256)
           handler: handleTransfer
-        - event: Approval(address,address,uint256)
-          handler: handleApproval
+#        - event: Approval(address,address,uint256)
+#          handler: handleApproval
       file: ./src/humanity.ts
   - kind: ethereum/contract
     name: HumanityGovernance
